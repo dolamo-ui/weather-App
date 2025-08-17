@@ -1,0 +1,275 @@
+
+/* ===== Light Mode ===== */
+.container.light {
+  max-width: 860px;
+  width: 90%;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* ===== Dark Mode ===== */
+.container.dark {
+  max-width: 860px;
+  width: 90%;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #1e293b; /* slate dark */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-family: 'Segoe UI', sans-serif;
+  color: #f1f5f9;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: inherit;
+}
+
+/* Search Form */
+.searchForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* wraps on small screens */
+}
+
+.searchInput {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: inherit;
+  color: inherit;
+}
+
+.container.dark .searchInput {
+  border: 1px solid #64748b;
+}
+
+.searchButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #1d4ed8;
+}
+
+/* My Location Button */
+.currentLocationButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #10b981;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.currentLocationButton:hover {
+  background-color: #059669;
+}
+
+/* Status text */
+.status {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: inherit;
+}
+
+/* Location name text */
+.locationName {
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: inherit;
+}
+
+/* Saved Locations List */
+.listBox {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.container.dark .listBox {
+  background-color: #334155;
+  border: 1px solid #475569;
+}
+
+.listItem {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.listItem:hover {
+  background-color: #f3f4f6;
+}
+
+.container.dark .listItem {
+  border-bottom: 1px solid #475569;
+}
+
+.container.dark .listItem:hover {
+  background-color: #475569;
+}
+
+.noLocations {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.container.dark .noLocations {
+  color: #cbd5e1;
+}
+
+/* Delete button */
+.deleteButton {
+  background: transparent;
+  border: none;
+  color: #ff4444;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  color: #cc0000;
+}
+
+/* ===== Responsive Styles ===== */
+
+/* Extra-small devices (phones < 360px) */
+@media (max-width: 360px) {
+  .container.light,
+  .container.dark {
+    padding: 12px;
+  }
+
+  .header {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  .searchInput,
+  .searchButton,
+  .currentLocationButton {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .searchForm {
+    gap: 6px;
+  }
+
+  .status,
+  .locationName {
+    font-size: 0.8rem;
+  }
+
+  .listItem {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+
+  .deleteButton {
+    font-size: 1rem;
+  }
+}
+
+/* Small devices (phones 361px - 480px) */
+@media (max-width: 480px) {
+  .container.light,
+  .container.dark {
+    padding: 16px;
+  }
+
+  .header {
+    font-size: 1.5rem;
+  }
+
+  .searchInput,
+  .searchButton,
+  .currentLocationButton {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 9px 11px;
+  }
+
+  .status,
+  .locationName {
+    font-size: 0.85rem;
+  }
+
+  .listItem {
+    padding: 7px 10px;
+    font-size: 0.9rem;
+  }
+
+  .deleteButton {
+    font-size: 1.1rem;
+  }
+}
+
+/* Medium devices (tablets 481px - 768px) */
+@media (max-width: 768px) {
+  .container.light,
+  .container.dark {
+    padding: 20px;
+  }
+
+  .header {
+    font-size: 1.6rem;
+  }
+
+  .searchForm {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .searchInput,
+  .searchButton,
+  .currentLocationButton {
+    width: 100%;
+  }
+
+  .listItem {
+    font-size: 0.95rem;
+  }
+}
+
+/* Large devices (desktops 769px - 1200px) */
+@media (max-width: 1200px) {
+  .container.light,
+  .container.dark {
+    padding: 22px;
+  }
+
+  .header {
+    font-size: 1.7rem;
+  }
+}
+
