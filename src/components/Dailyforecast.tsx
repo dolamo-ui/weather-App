@@ -10,7 +10,7 @@ interface DailyForecastProps {
   themeStyles: ThemeStyles;
 }
 
-const DailyForecast: React.FC<DailyForecastProps> = ({ daily, settings, themeStyles }) => {
+const DailyForecast: React.FC<DailyForecastProps> = ({ daily,  themeStyles }) => {
   return (
     <section className="space-y-6">
       <h3 className="text-xl font-bold">7-Day Forecast</h3>
