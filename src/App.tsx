@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import { Sun, MapPin } from 'lucide-react';
+
 
 // Components
 import Sidebar from './components/Sidebar';
@@ -51,7 +50,6 @@ const App: React.FC = () => {
   const {
     locationPermission,
     notificationPermission,
-    requestLocationPermission: requestGeoPermission,
     requestNotificationPermission: requestNotifPermission,
   } = usePermissions();
 
