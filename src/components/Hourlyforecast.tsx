@@ -10,7 +10,7 @@ interface HourlyForecastProps {
   themeStyles: ThemeStyles;
 }
 
-const HourlyForecast: React.FC<HourlyForecastProps> = ({ hourly, settings, themeStyles }) => {
+const HourlyForecast: React.FC<HourlyForecastProps> = ({ hourly,  themeStyles }) => {
   return (
     <section className="space-y-6">
       <div className="flex items-center justify-between">
