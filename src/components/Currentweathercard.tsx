@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun } from 'lucide-react';
-import type { WeatherData, AppSettings, ThemeStyles } from '../../types';
+import type { WeatherData, AppSettings, ThemeStyles } from '../types';
 import { WeatherIcons, getWeatherIconColor, convertTemp } from '../../weatherUtils';
 
 interface CurrentWeatherCardProps {
@@ -73,5 +73,6 @@ const CurrentWeatherCard: React.FC<CurrentWeatherCardProps> = ({
     </motion.div>
   );
 };
+
 
 export default CurrentWeatherCard;
