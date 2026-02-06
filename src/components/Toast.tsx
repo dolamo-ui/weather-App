@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AlertCircle } from 'lucide-react';
-import type { ThemeStyles } from '../types';
+import type { ThemeStyles } from '../../types';
 
 interface ToastProps {
   message: string;
@@ -44,6 +44,5 @@ const Toast: React.FC<ToastProps> = ({ message, onClose, themeStyles }) => {
     </AnimatePresence>
   );
 };
-
 
 export default Toast;

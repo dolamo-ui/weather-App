@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
-import type { WeatherData, ForecastItem, DailyForecastItem, AppSettings, ThemeStyles } from '../types';
+import type { WeatherData, ForecastItem, DailyForecastItem, AppSettings, ThemeStyles } from '../../types';
 import CurrentWeatherCard from './Currentweathercard';
 import WeatherStats from './Weatherstats';
 import HourlyForecast from './Hourlyforecast';
@@ -121,4 +121,3 @@ const MainDashboard: React.FC<MainDashboardProps> = ({
 };
 
 export default MainDashboard;
-

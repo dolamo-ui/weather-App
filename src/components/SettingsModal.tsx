@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Moon, Wind, Bell, MapPin } from 'lucide-react';
-import type { AppSettings, ThemeStyles } from '../types';
+import type { AppSettings, ThemeStyles } from '../../types';
 
 interface SettingsModalProps {
   show: boolean;
@@ -164,6 +164,5 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
     </AnimatePresence>
   );
 };
-
 
 export default SettingsModal;

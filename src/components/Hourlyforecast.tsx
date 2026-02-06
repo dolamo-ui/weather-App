@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Cloud } from 'lucide-react';
-import type { ForecastItem, AppSettings, ThemeStyles } from '../types';
+import type { ForecastItem, AppSettings, ThemeStyles } from '../../types';
 import { WeatherIcons, getWeatherIconColor, convertTemp } from '../../weatherUtils';
 
 interface HourlyForecastProps {
@@ -41,4 +41,3 @@ const HourlyForecast: React.FC<HourlyForecastProps> = ({ hourly,  themeStyles })
 };
 
 export default HourlyForecast;
-

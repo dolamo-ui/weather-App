@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Droplets, Wind, Gauge, Eye } from 'lucide-react';
-import type { WeatherData, AppSettings, ThemeStyles } from '../types';
+import type { WeatherData, AppSettings, ThemeStyles } from '../../types';
 import { convertWind } from '../../weatherUtils';
 
 interface WeatherStatsProps {
@@ -36,6 +36,5 @@ const WeatherStats: React.FC<WeatherStatsProps> = ({ weather, settings, themeSty
     </div>
   );
 };
-
 
 export default WeatherStats;

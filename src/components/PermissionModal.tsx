@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin } from 'lucide-react';
-import type { ThemeStyles } from '../types';
+import type { ThemeStyles } from '../../types';
 
 interface PermissionModalProps {
   show: boolean;
@@ -65,6 +65,5 @@ const PermissionModal: React.FC<PermissionModalProps> = ({
     </AnimatePresence>
   );
 };
-
 
 export default PermissionModal;
