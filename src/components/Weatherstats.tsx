@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Droplets, Wind, Gauge, Eye } from 'lucide-react';
-import type { WeatherData, AppSettings, ThemeStyles } from '../../types';
-import { convertWind } from '../../weatherUtils';
+import type { WeatherData, AppSettings, ThemeStyles } from '../types';
+import { convertWind } from '../utils/weatherUtils';
 
 interface WeatherStatsProps {
   weather: WeatherData;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, Settings, Star, Navigation, Trash2 } from 'lucide-react';
-import type { Location, ThemeStyles } from '../../types';
-import { WeatherIcons, getWeatherIconColor } from '../../weatherUtils';
+import type { Location, ThemeStyles } from '../types';
+import { WeatherIcons, getWeatherIconColor } from '../utils/weatherUtils';
 
 interface SidebarProps {
   searchQuery: string;

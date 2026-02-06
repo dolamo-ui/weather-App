@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Cloud } from 'lucide-react';
-import type { DailyForecastItem, AppSettings, ThemeStyles } from '../../types';
-import { WeatherIcons, getWeatherIconColor, convertTemp } from '../../weatherUtils';
+import type { DailyForecastItem, AppSettings, ThemeStyles } from '../types';
+import { WeatherIcons, getWeatherIconColor, convertTemp } from '../utils/weatherUtils';
 
 interface DailyForecastProps {
   daily: DailyForecastItem[];

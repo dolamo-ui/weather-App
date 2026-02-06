@@ -18,12 +18,12 @@ import type {
   Location,
   OpenWeatherAPIResponse,
   ForecastAPIResponse
-} from '../types';
+} from './types';
 
 // Utils
-import { generateInsights } from '../weatherUtils';
-import { useLocalStorage } from '../useLocalStorage';
-import { usePermissions } from '../usePermissions';
+import { generateInsights } from './utils/weatherUtils';
+import { useLocalStorage } from './hooks/useLocalStorage';
+import { usePermissions } from './hooks/usePermissions';
 
 const API_KEY = '131f01e128b4925e8f00fe356f745551';
 const MAX_SAVED_LOCATIONS = 10;
@@ -156,8 +156,8 @@ const App: React.FC = () => {
     setWeather(weatherData);
     
     // Update saved locations
-    setSavedLocations(prev => {
-      const exists = prev.some(loc => 
+    setSavedLocations((prev: Location[]) => {
+      const exists = prev.some((loc: Location) => 
         loc.name.toLowerCase() === current.name.toLowerCase()
       );
       
@@ -181,7 +181,7 @@ const App: React.FC = () => {
           return [...prev, newLocation];
         }
       } else {
-        return prev.map(loc => 
+        return prev.map((loc: Location) => 
           loc.name.toLowerCase() === current.name.toLowerCase()
             ? { ...loc, temp: current.main.temp, condition: current.weather[0].main }
             : loc
@@ -308,16 +308,16 @@ const App: React.FC = () => {
     if (!settings.notifications) {
       await requestNotifPermission();
       if (Notification.permission === 'granted') {
-        setSettings(prev => ({ ...prev, notifications: true }));
+        setSettings((prev: AppSettings) => ({ ...prev, notifications: true }));
         showNotification('Weather notifications enabled!', 'You will now receive weather alerts and updates.');
       }
     } else {
-      setSettings(prev => ({ ...prev, notifications: false }));
+      setSettings((prev: AppSettings) => ({ ...prev, notifications: false }));
     }
   };
 
   const removeFromSavedLocations = (id: string): void => {
-    setSavedLocations(prev => prev.filter(loc => loc.id !== id));
+    setSavedLocations((prev: Location[]) => prev.filter((loc: Location) => loc.id !== id));
   };
 
   const clearAllLocations = (): void => {

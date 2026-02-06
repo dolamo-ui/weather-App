@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun } from 'lucide-react';
-import type { WeatherData, AppSettings, ThemeStyles } from '../../types';
-import { WeatherIcons, getWeatherIconColor, convertTemp } from '../../weatherUtils';
+import type { WeatherData, AppSettings, ThemeStyles } from '../types';
+import { WeatherIcons, getWeatherIconColor, convertTemp } from '../utils/weatherUtils';
 
 interface CurrentWeatherCardProps {
   weather: WeatherData;
