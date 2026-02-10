@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export function useLocalStorage<T>(key: string, initialValue: T): [T, React.Dispatch<React.SetStateAction<T>>] {
-  // State to store our value
-  // Pass initial state function to useState so logic is only executed once
+
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
       const item = window.localStorage.getItem(key);
@@ -13,7 +12,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, React.Disp
     }
   });
 
-  // useEffect to update local storage when the state changes
+ 
   useEffect(() => {
     try {
       window.localStorage.setItem(key, JSON.stringify(storedValue));
@@ -23,4 +22,5 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, React.Disp
   }, [key, storedValue]);
 
   return [storedValue, setStoredValue];
+
 }
