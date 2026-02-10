@@ -2,7 +2,7 @@ import { Sun, Cloud, CloudRain, CloudSnow, CloudDrizzle, Zap } from 'lucide-reac
 import type { LucideProps } from 'lucide-react';
 import type { WeatherData } from '../types';
 
-// Weather Icons Mapping
+
 export const WeatherIcons: Record<string, React.FC<LucideProps>> = {
   Clear: Sun,
   Clouds: Cloud,
@@ -12,7 +12,7 @@ export const WeatherIcons: Record<string, React.FC<LucideProps>> = {
   Thunderstorm: Zap,
 };
 
-// Helper function to get weather icon color
+
 export const getWeatherIconColor = (condition: string): string => {
   switch(condition) {
     case 'Clear': return 'text-yellow-400';
@@ -25,7 +25,7 @@ export const getWeatherIconColor = (condition: string): string => {
   }
 };
 
-// Generate AI insights
+
 export const generateInsights = (data: WeatherData): string => {
   const insights: string[] = [];
   
@@ -52,15 +52,16 @@ export const generateInsights = (data: WeatherData): string => {
   return insights.join(' ');
 };
 
-// Temperature conversion
+
 export const convertTemp = (temp: number): number => {
   return Math.round(temp);
 };
 
-// Wind speed conversion
+
 export const convertWind = (speed: number, unit: 'km/h' | 'mph'): string => {
   if (unit === 'mph') {
     return (speed * 0.621371).toFixed(1);
   }
   return speed.toFixed(1);
+
 };
