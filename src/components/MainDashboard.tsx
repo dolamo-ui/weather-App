@@ -30,14 +30,14 @@ const MainDashboard: React.FC<MainDashboardProps> = ({
 }) => {
   return (
     <main className="flex-1 relative overflow-y-auto h-screen">
-      {/* Dynamic Background */}
+     
       <div className={`absolute inset-0 z-0 opacity-20 pointer-events-none bg-gradient-to-br ${backgroundGradient}`} />
       
       <div className="relative z-10 p-6 lg:p-10 max-w-6xl mx-auto space-y-8">
         
         {weather ? (
           <>
-            {/* Header */}
+            
             <header className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div className="flex-1">
                 <motion.div 
@@ -69,7 +69,7 @@ const MainDashboard: React.FC<MainDashboardProps> = ({
               </motion.div>
             </header>
 
-            {/* Current Weather Card */}
+           
             <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <CurrentWeatherCard
                 weather={weather}
@@ -78,7 +78,7 @@ const MainDashboard: React.FC<MainDashboardProps> = ({
                 themeStyles={themeStyles}
               />
 
-              {/* Quick Stats Grid */}
+             
               <WeatherStats
                 weather={weather}
                 settings={settings}
@@ -86,14 +86,13 @@ const MainDashboard: React.FC<MainDashboardProps> = ({
               />
             </section>
 
-            {/* Hourly Forecast */}
+          
             <HourlyForecast
               hourly={hourly}
               settings={settings}
               themeStyles={themeStyles}
             />
 
-            {/* Daily Forecast */}
             <DailyForecast
               daily={daily}
               settings={settings}
@@ -119,5 +118,6 @@ const MainDashboard: React.FC<MainDashboardProps> = ({
     </main>
   );
 };
+
 
 export default MainDashboard;
