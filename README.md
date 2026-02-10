@@ -59,7 +59,8 @@
 <div align="center">
   
   ### Main Dashboard
- <img width="1909" height="1487" alt="screencapture-dancing-bunny-d28333-netlify-app-2026-02-10-14_38_58" src="https://github.com/user-attachments/assets/f8e91b6f-96a7-4edd-a30f-ff0b38ac63ec" />
+<img width="1909" height="1487" alt="image" src="https://github.com/user-attachments/assets/eabacd92-0988-4ef4-9af3-3ae9badbf2b2" />
+
 
   
   *Beautiful weather overview with hourly and daily forecasts*
@@ -325,4 +326,5 @@ For support, email your.email@example.com or open an issue.
   **Aether Weather** - Because weather should be beautiful
   
 </div>
+
 
