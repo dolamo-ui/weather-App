@@ -303,7 +303,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 If you like this project, please give it a ⭐ on GitHub!
 
-For support, email your.email@example.com or open an issue.
 
 ---
 
@@ -316,6 +315,7 @@ For support, email your.email@example.com or open an issue.
   **Aether Weather** - Because weather should be beautiful
   
 </div>
+
 
 
 
