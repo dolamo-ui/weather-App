@@ -287,16 +287,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-## 👤 Author
-
-**Your Name**
-
-- Website: [yourwebsite.com](https://yourwebsite.com)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
-- Email: your.email@example.com
-
----
 
 ## 🙏 Acknowledgments
 
@@ -326,5 +316,6 @@ For support, email your.email@example.com or open an issue.
   **Aether Weather** - Because weather should be beautiful
   
 </div>
+
 
 
