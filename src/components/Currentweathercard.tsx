@@ -54,7 +54,7 @@ const CurrentWeatherCard: React.FC<CurrentWeatherCardProps> = ({
         </div>
       </div>
       
-      {/* AI Insights Bar */}
+      
       <AnimatePresence mode="wait">
         {insights && (
           <motion.div 
@@ -73,5 +73,6 @@ const CurrentWeatherCard: React.FC<CurrentWeatherCardProps> = ({
     </motion.div>
   );
 };
+
 
 export default CurrentWeatherCard;
