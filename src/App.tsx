@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 
 
-// Components
+
 import Sidebar from './components/Sidebar';
 import MainDashboard from './components/MainDashboard';
 import PermissionModal from './components/PermissionModal';
@@ -9,7 +9,7 @@ import SettingsModal from './components/SettingsModal';
 import Toast from './components/Toast';
 import LoadingScreen from './components/LoadingScreen';
 
-// Types
+
 import type { 
   WeatherData, 
   ForecastItem, 
@@ -20,7 +20,7 @@ import type {
   ForecastAPIResponse
 } from './types';
 
-// Utils
+
 import { generateInsights } from './utils/weatherUtils';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { usePermissions } from './hooks/usePermissions';
@@ -29,7 +29,7 @@ const API_KEY = '131f01e128b4925e8f00fe356f745551';
 const MAX_SAVED_LOCATIONS = 10;
 
 const App: React.FC = () => {
-  // --- State ---
+ 
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [hourly, setHourly] = useState<ForecastItem[]>([]);
   const [daily, setDaily] = useState<DailyForecastItem[]>([]);
@@ -53,7 +53,7 @@ const App: React.FC = () => {
     requestNotificationPermission: requestNotifPermission,
   } = usePermissions();
 
-  // --- Fetch Weather by Coordinates ---
+  
   const fetchWeatherByCoords = async (lat: number, lon: number): Promise<void> => {
     setLoading(true);
     setError('');
@@ -97,7 +97,7 @@ const App: React.FC = () => {
     }
   };
 
-  // --- Fetch Weather by City Name ---
+ 
   const fetchWeather = async (cityName: string): Promise<void> => {
     setLoading(true);
     setError('');
@@ -136,7 +136,7 @@ const App: React.FC = () => {
     }
   };
 
-  // --- Process Weather Data ---
+  
   const processWeatherData = (current: OpenWeatherAPIResponse, forecast: ForecastAPIResponse): void => {
     const weatherData: WeatherData = {
       city: current.name,
@@ -155,7 +155,7 @@ const App: React.FC = () => {
     
     setWeather(weatherData);
     
-    // Update saved locations
+    
     setSavedLocations((prev: Location[]) => {
       const exists = prev.some((loc: Location) => 
         loc.name.toLowerCase() === current.name.toLowerCase()
@@ -189,7 +189,7 @@ const App: React.FC = () => {
       }
     });
     
-    // Hourly forecast
+   
     const hourlyData: ForecastItem[] = forecast.list.slice(0, 10).map((item) => ({
       time: new Date(item.dt * 1000).toLocaleTimeString('en-US', { hour: 'numeric' }),
       temp: item.main.temp,
@@ -198,7 +198,7 @@ const App: React.FC = () => {
     
     setHourly(hourlyData);
     
-    // Daily forecast
+    
     const dailyMap = new Map<string, {
       day: string;
       high: number;
@@ -234,7 +234,7 @@ const App: React.FC = () => {
     setInsights(aiInsights);
   };
 
-  // --- Show Notification ---
+ 
   const showNotification = (title: string, body: string): void => {
     if (Notification.permission === 'granted' && settings.notifications) {
       new Notification(title, {
@@ -245,7 +245,7 @@ const App: React.FC = () => {
     }
   };
 
-  // --- Request Location Permission ---
+ 
   const handleRequestLocation = async (): Promise<void> => {
     setShowPermissionPrompt(false);
     
@@ -287,7 +287,7 @@ const App: React.FC = () => {
     );
   };
 
-  // --- Handlers ---
+  
   const handleSearch = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (searchQuery.trim()) {
@@ -326,7 +326,7 @@ const App: React.FC = () => {
     }
   };
 
-  // --- Initial Load ---
+  
   useEffect(() => {
     if (locationPermission === 'granted') {
       handleRequestLocation();
@@ -336,7 +336,7 @@ const App: React.FC = () => {
     }
   }, []);
 
-  // --- Theme Styles ---
+
   const themeStyles = useMemo(() => {
     if (settings.theme === 'dark') {
       return {
@@ -376,7 +376,7 @@ const App: React.FC = () => {
   return (
     <div className={`min-h-screen transition-colors duration-500 ${themeStyles.bg} ${themeStyles.textPrimary} flex flex-col lg:flex-row overflow-hidden`}>
       
-      {/* Permission Prompt Modal */}
+     
       <PermissionModal
         show={showPermissionPrompt}
         onClose={() => setShowPermissionPrompt(false)}
@@ -384,14 +384,14 @@ const App: React.FC = () => {
         themeStyles={themeStyles}
       />
 
-      {/* Error/Success Toast */}
+     
       <Toast
         message={error}
         onClose={() => setError('')}
         themeStyles={themeStyles}
       />
 
-      {/* Sidebar */}
+      
       <Sidebar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
@@ -406,7 +406,7 @@ const App: React.FC = () => {
         maxLocations={MAX_SAVED_LOCATIONS}
       />
 
-      {/* Main Dashboard */}
+      
       <MainDashboard
         weather={weather}
         hourly={hourly}
@@ -418,7 +418,7 @@ const App: React.FC = () => {
         onEnableLocation={() => setShowPermissionPrompt(true)}
       />
 
-      {/* Settings Modal */}
+    
       <SettingsModal
         show={showSettings}
         onClose={() => setShowSettings(false)}
@@ -436,5 +436,6 @@ const App: React.FC = () => {
     </div>
   );
 };
+
 
 export default App;
