@@ -59,12 +59,14 @@
 <div align="center">
   
   ### Main Dashboard
-  <img src="screenshots/dashboard.png" alt="Dashboard" width="700"/>
+ <img width="1909" height="1487" alt="screencapture-dancing-bunny-d28333-netlify-app-2026-02-10-14_38_58" src="https://github.com/user-attachments/assets/f8e91b6f-96a7-4edd-a30f-ff0b38ac63ec" />
+
   
   *Beautiful weather overview with hourly and daily forecasts*
   
   ### Settings Panel
-  <img src="screenshots/settings.png" alt="Settings" width="700"/>
+  <img width="1909" height="1487" alt="screencapture-dancing-bunny-d28333-netlify-app-2026-02-10-14_38_58" src="https://github.com/user-attachments/assets/4fda4735-459f-4aac-9853-63b3ef1d3ef5" />
+
   
   *Customize your weather experience*
   
@@ -79,7 +81,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone 
+   git clone https://github.com/dolamo-ui/weather-App.git
    cd aether-weather
    ```
 
@@ -323,3 +325,4 @@ For support, email your.email@example.com or open an issue.
   **Aether Weather** - Because weather should be beautiful
   
 </div>
+
