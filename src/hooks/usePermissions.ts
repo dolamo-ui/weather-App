@@ -9,7 +9,7 @@ export function usePermissions() {
   }, []);
 
   const checkPermissions = async (): Promise<void> => {
-    // Check geolocation permission
+    
     if ('permissions' in navigator) {
       try {
         const geoPermission = await navigator.permissions.query({ name: 'geolocation' as PermissionName });
@@ -23,15 +23,14 @@ export function usePermissions() {
       }
     }
 
-    // Check notification permission
+    
     if ('Notification' in window) {
       setNotificationPermission(Notification.permission);
     }
   };
 
   const requestLocationPermission = async (): Promise<void> => {
-    // This is handled in the main component
-    // This hook just tracks the state
+    
   };
 
   const requestNotificationPermission = async (): Promise<void> => {
@@ -58,4 +57,5 @@ export function usePermissions() {
     requestLocationPermission,
     requestNotificationPermission,
   };
+
 }
